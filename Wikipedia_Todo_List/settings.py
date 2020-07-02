@@ -26,7 +26,7 @@ Static_DIR = os.path.join(BASE_DIR,"static")
 SECRET_KEY = '+nfmwx*gps#$(d#(h#l5el&wpxzjnz_nl6#gs1=b+zmzv7rn#+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["ahademu-wikipedia.herokuapp.com", "127.0.0.1"]
 
