@@ -22,7 +22,7 @@ def upload(request):
         form = ItemForm(request.POST or none)
         if form.is_valid():
             form.save()
-            return redirect("home")
+            return redirect("show")
 
         else:
             return insert(request)
@@ -35,7 +35,7 @@ def details(request, Item_id):
 def delete(request, Item_id):
     item = Item.objects.get(pk=Item_id)
     item.delete()
-    return redirect("home")
+    return redirect("show")
 
 def edit(request, Item_id):
     item = Item.objects.get(pk=Item_id)
@@ -47,7 +47,7 @@ def edit_upload(request, Item_id):
         form = ItemForm(request.POST or none, instance=item)
         if form.is_valid():
             form.save()
-            return redirect("home")
+            return redirect("show")
 
         else:
             return insert(request)

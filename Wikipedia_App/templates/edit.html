@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container">
-  <h1 class="text-center mt-5 mb-5">This is Edited Page</h1>
+  <h1 class="text-center mt-5 mb-5">EDIT THE ITEM</h1>
   <form class="form-horizontal" action="{% url 'edit_upload' item.id %} " method="post">
     {% csrf_token %}
     <div class="form-group">
