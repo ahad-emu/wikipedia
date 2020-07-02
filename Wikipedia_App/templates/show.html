@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <h1 class="text-center mt-5">This is Index Page</h1>
+  <a href="{% url 'insert' %}" class="btn btn-primary float-right mb-2" >Insert Item</a>
+
+  {% if all_items %}
+    <table class="table table-dark table-bordered table-striped">
+      <thead class="thead-light">
+        <tr>
+          <td>Title Name</td>
+          <td>Defination of Title</td>
+          <td>Details</td>
+          <td>delete</td>
+        </tr>
+      </thead>
+    {% for item in all_items %}
+      <tbody>
+        <tr>
+          <td>{{item.name}}</td>
+          <td>{{item.defination}}</td>
+          <td><a href="{% url 'details' item.id %}">details</a></td>
+          <td><a href="{% url 'delete' item.id %}">delete</a></td>
+        </tr>
+      </tbody>
+    {% endfor %}
+    </table>
+</div>
+{% endif %}
+{% endblock %}
